@@ -1,0 +1,25 @@
+This is a very nice example of optimizing R code via profiling developed by Ross Ihaka.
+The goal is a simple 2-dimensional random walk.  
+We take n steps.
+For each step, we move vertically or horizontally.
+If we move vertically, we move up or down 1 unit.
+If we move horizontally, we move left or right 1 unit.
+
+The idea is to allow profiling to direct us in improving the performance of the code. 
+We start with a loop, then we try to optimize how to toss a coin, then we vectorize, and
+then we vectorize further (super-vectorization) by changing the
+computational approach.  sample() is replaced by runif(), but when
+vectorized, runif() is replaced by sample()!
+
+Run the code
+
+  source("rw_prof.R")
+
+
+The functions are in rw1.R
+
+Compiling the naieve implementation (rw2d1) with
+the RLLVMCompile and Rllvm packages gives code that outperforms
+the fully vectorized version (rw2d5).
+
+
