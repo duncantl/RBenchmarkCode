@@ -1,0 +1,7 @@
+This collection of run* scripts illustrate different approaches to
+sampling from distributions.  One uses the inverse Cumulative
+Distribution Function (CDF) approach. Another uses
+acceptance-rejection sampling for a two dimensionsal density. Finally,
+there are some simple Markov Chain Monte Carlo examples with a
+reasonably general MCMC function to which the caller provides the 
+stationary density function, the proposal function

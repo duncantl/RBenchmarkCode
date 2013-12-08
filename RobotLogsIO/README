@@ -26,4 +26,9 @@ We have 100 log files. I have included only one here - Example.log.
 
 
 
-
+We can go further than just IO here.  The idea is, for each location
+the robot visits, to determine if it sees the target. To do this, it
+determines the contiguous segments in the circle where it "sees"
+something.  For each of these, it uses non-linear least squares to
+determine of the "boundary" it sees is consistent with a circle of
+radius approximately .5 meters.

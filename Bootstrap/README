@@ -1,0 +1,14 @@
+This is a very simple application of the statistical bootstrap technique.
+
+One of the goals of this example is to identify that we can reuse the same
+memory for each of the bootstrap  iterations.
+We can also parallelize the bootstrap since the order in which the replications
+are performed is not important. So we can use a pool of threads to evaluate
+the replications.  We can reuse memory within each thread across iteration.
+
+We might also try to map the code to a GPU.
+
+There are also interesting things one can do with the bootstrap as 
+many observations will be repeated in a non-parametric bootstrap (37% 
+of the original observations won't be in each bootstrap sample). Hence
+we can take advantage of this replication to compute the statistic of interest.
