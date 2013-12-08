@@ -1,0 +1,25 @@
+Distances play an important role in many statistical methods,
+e.g. clustering, k-nearest neighbors, support vector machines, and
+generally kernel methods.
+
+We would like to be able to compute distances with R code rather than
+relying on C code.  Furthermore, the R dist() function requires a
+single matrix or data frame and then computes pairwise-distances for
+all pairs of rows in the data. Often we have a single observation or a
+test data set and a training set and we want the distances between
+each observation in our test data and each observation in the traing
+data. We have to i) stack the training and test data into a single
+matrix/data frame and ii) compute a lot of distances that we then
+discard (i.e. within test and within training distances).
+
+We want to avoid the memory issues, i.e. stacking and converting a data frame to a matrix.
+
+Furthermore, we would like to be able to parallelize the code, perhaps
+even implementing it on GPUs.
+
+We would also like to be able to add new distance metrics.
+
+
+The Dist() function in Dist.R is very simple and the obvious way to write the general
+distance computation for two data sets.  
+Compilation should try to avoid creating the intermediate row vectors.

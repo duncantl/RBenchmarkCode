@@ -1,0 +1,29 @@
+This example comes from Sam Buttrey and colleagues at the Naval Postgraduate School in Monterey, CA.
+
+This example illustrates reading data from  log files from robots moving around
+a course looking for a circular target.
+It has some characteristics in common with the WirelessDataIO example,
+i.e. ragged data and having to copy values from one vector to a different form.
+
+Here we read an entire log file and create a matrix of
+observations. Each observation has a time, location (x, y), and a
+"range" for each of 361 angles. The ranges tell us how far the robot
+can see in a circle around where it is located, up to 2 meters.  If a
+range is less than 2, this means there is something closer to the
+robot in that direction, i.e. an obstacle or the target.
+
+This application can be readily cast as an online algorithm where we read new data
+and then determine if we have located the target.
+
+The readAll*.R files provide 3 refinments of reading the data.
+
+simpleRead.R reads the data line by line but keeps the payloads for
+the different types of lines as strings which need to be
+post-processed later.
+
+
+We have 100 log files. I have included only one here - Example.log.
+
+
+
+

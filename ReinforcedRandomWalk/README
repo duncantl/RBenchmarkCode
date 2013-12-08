@@ -1,0 +1,12 @@
+This implements a reinforced random walk. This is similar to the 2D
+random walk, but the probabilities of the 4 directions we might choose
+depend on whether we have visited the current point before. In other
+words, when we end up back at a point we previously visited, the
+probabilities for the next step change.
+
+Unlike a simple 2D random walk, we have to record where we have visited and be able
+to look this up for a position.
+
+This example is taken from Mark Holmes in Auckland, New Zealand.
+
+I also have versions in Lisp and R that calls C code.

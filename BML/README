@@ -1,0 +1,13 @@
+This code simulates the Biham Midleton Levine "car" model.
+This is interesting because it is a very simple model that
+exhibits a phase transition.
+
+We randomly locate rho cars on a grid. A car is either red or blue.
+Red cars move horizontally to the right; blue cars move vertically upward.
+When a car reaches the edge of the grid, it wraps around to the other edge
+(in the same row or column). In other words, the grid acts as a torus.
+
+
+We implement the simulation using a matrix to represent the state of the grid.
+We can chose and explore different data structures, but this is adequate
+and reasonably simple and efficient.

@@ -1,0 +1,18 @@
+This illustrates processing data that come in ragged form, i.e.  with
+a different number of values on each line.  The context is wireless
+signals in a building recorded by a research moving through the
+building with a hand-held device that records the strength of the
+wireless signals it detects.
+
+The data are from CRAWDAD.
+
+Lines of interest in the file are of the form:
+
+t=1139643118358;id=00:02:2D:21:0F:33;pos=0.0,0.0,0.0;degree=0.0;00:14:bf:b1:97:8a=-38,2437000000,3;00:14:bf:b1:97:90=-56,2427000000,3;00:0f:a3:39:e1:c0=-53,2462000000,3;00:14:bf:b1:97:8d=-65,2442000000,3;00:14:bf:b1:97:81=-65,2422000000,3;00:14:bf:3b:c7:c6=-66,2432000000,3;00:0f:a3:39:dd:cd=-75,2412000000,3;00:0f:a3:39:e0:4b=-78,2462000000,3;00:0f:a3:39:e2:10=-87,2437000000,3;02:64:fb:68:52:e6=-88,2447000000,1;02:00:42:55:31:00=-84,2457000000,1
+
+Elements are separated by ;. The first 4 elements are time, hand-held device identifier, location in the building and the orientation/degree indicating the direction the researcher is facing.
+
+After these, there is an element for each device that was detected at this point in time.
+Each element is of the form
+   02:00:42:55:31:00=-84,2457000000,1
+i.e. the MAC of the device detected followed by = then the signal strength, the channel and an indicator (1 or 3) that identifies if the device was a fixed base station or a mobile device.
