@@ -6,4 +6,5 @@ D = matrix(0, 5, 5)
 D[row(D) > col(D) ] = d
 D = D + t(D)
 
+dimnames(D) = list(1:nrow(D), 1:nrow(D))
 

@@ -56,4 +56,12 @@ function(x, a = 0, b = 2, c = 1) {
     ans[B] = b - sqrt((1-x[B])*(b-a)*(b-c)) 
 
     ans
-  }
+}
+
+rtriang =
+function(n, a = 0, b = 2, c = 1)
+{
+  u = runif(n)
+  inv.triang(u, a, b, c)
+}
+
