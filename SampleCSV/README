@@ -1,0 +1,19 @@
+This is an example of how we would change how we program something if looping in R were faster.
+
+The idea here is to take a random sample of lines from a file.
+We can do this in one of 3 ways
+ 1. read all the lines and then subset the elements in the sample
+ 2. read each line one at a time and keep the ones we want
+ 3. read a block of line up to the next line in our sample and keep that last line in each block.
+
+The first approach uses a lot of memory, storing all N lines.
+The second approach involves a loop over O(N) lines.
+The third approach involves a loop with as many iterations as the sample size. It does
+use more memory than 2. as we have to store an entire block.
+
+When loops are compiled and fast, 2. is the best approach.
+However, in regular (GNU) R, this is extremely expensive.
+
+
+A C implement of 2 is available in the R package at
+  https://github.com/duncantl/FastCSVSample.git
