@@ -31,10 +31,6 @@ manhattan <-
 function(x, y)
   sum(abs(x - y))
 
-manhattan <-
-function(x, y)
-  sum(abs(x - y))
-
 maximum <-
 function(x, y)
   max(abs(x - y))
@@ -53,5 +49,5 @@ binary <-
 function(x, y)
 {
    w =  x != 0 | y != 0
-   sum((x[w] != 0 + y[w] != 0) == 1)/sum(w)
+   sum((x[w] != 0 & y[w] != 0) == 1)/sum(w)
 }
