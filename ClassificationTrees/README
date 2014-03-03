@@ -1,5 +1,5 @@
 See  Nick's git repository
-  git@github.com:duncantl/RBenchmarkCode.git
+   https://github.com/nick-ulle/mlexamples
 
 This uses R reference classes (S5). We can reimplement them with
 simple lists and vectors as necessary.
